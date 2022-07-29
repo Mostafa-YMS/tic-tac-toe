@@ -2,6 +2,13 @@ import Players from "./Pages/Players";
 import { useState, useCallback, useEffect } from "react";
 import Game from "./Pages/Game";
 
+export const titleStyle = {
+  fontWeight: "700",
+  fontSize: "48px",
+  textAlign: "center",
+  marginBottom: "80px",
+};
+
 function App() {
   const [players, setPlayers] = useState();
   const [loading, setLoading] = useState(true);
@@ -19,6 +26,7 @@ function App() {
 
   return (
     <>
+      <p style={titleStyle}>Welcome to tic tac toe</p>
       {!loading && (
         <div>
           {players?.firstPlayer && players?.secondPlayer ? (

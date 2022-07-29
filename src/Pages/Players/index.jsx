@@ -11,7 +11,6 @@ import {
   labelStyle,
   mainBoxStyle,
   mainTitleStyle,
-  titleStyle,
 } from "./PlayersStyles";
 
 const Players = ({ players, setPlayers }) => {
@@ -69,8 +68,6 @@ const Players = ({ players, setPlayers }) => {
 
   return (
     <form style={formStyle} onSubmit={handleContinue}>
-      <p style={titleStyle}>Welcome to tic tac toe</p>
-
       {players?.firstPlayer && (
         <p
           style={firstPlayerStyle}
