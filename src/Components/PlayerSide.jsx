@@ -13,6 +13,8 @@ const sideBoxStyle = {
   borderRadius: "6px",
 };
 
+const winningsStyle = { color: "#000" };
+
 const sideStyle = { fontSize: "48px", fontWeight: "500" };
 
 const PlayerSide = ({ player, turn, side }) => {
@@ -29,6 +31,8 @@ const PlayerSide = ({ player, turn, side }) => {
       <p>{`Player ${side === "X" ? 1 : 2} name: ${player?.firstName} ${
         player?.lastName
       }`}</p>
+
+      <p style={winningsStyle}>{`Winnings : ${player?.score}`}</p>
     </div>
   );
 };
