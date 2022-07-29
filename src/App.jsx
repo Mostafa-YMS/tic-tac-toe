@@ -6,7 +6,7 @@ export const titleStyle = {
   fontWeight: "700",
   fontSize: "48px",
   textAlign: "center",
-  marginBottom: "80px",
+  marginBottom: "60px",
 };
 
 function App() {

@@ -17,13 +17,13 @@ const winningsStyle = { color: "#000" };
 
 const sideStyle = { fontSize: "48px", fontWeight: "500" };
 
-const PlayerSide = ({ player, turn, side }) => {
+const PlayerSide = ({ player, turn, side, winner }) => {
   return (
-    <div style={{ ...mainDivStyle, color: turn && "#2BA400" }}>
+    <div style={{ ...mainDivStyle, color: (turn || winner) && "#2BA400" }}>
       <div
         style={{
           ...sideBoxStyle,
-          border: `3px solid ${turn ? "#2BA400" : "#000000"}`,
+          border: `3px solid ${turn || winner ? "#2BA400" : "#000000"}`,
         }}
       >
         <p style={sideStyle}>{side}</p>
@@ -32,7 +32,7 @@ const PlayerSide = ({ player, turn, side }) => {
         player?.lastName
       }`}</p>
 
-      <p style={winningsStyle}>{`Winnings : ${player?.score}`}</p>
+      {!winner && <p style={winningsStyle}>{`Winnings : ${player?.score}`}</p>}
     </div>
   );
 };

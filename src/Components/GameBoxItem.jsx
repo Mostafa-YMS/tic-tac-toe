@@ -9,10 +9,14 @@ const boxItemStyle = {
 };
 const valueStyle = { fontSize: "65px" };
 
-const GameBoxItem = ({ value, onClick }) => {
+const GameBoxItem = ({ value, onClick, win }) => {
   return (
     <div
-      style={{ ...boxItemStyle, cursor: !value && "pointer" }}
+      style={{
+        ...boxItemStyle,
+        cursor: !value && "pointer",
+        backgroundColor: win && "#C0FFD6",
+      }}
       onClick={!value ? onClick : () => {}}
     >
       <p style={valueStyle}>{value}</p>
