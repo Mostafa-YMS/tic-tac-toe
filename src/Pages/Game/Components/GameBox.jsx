@@ -60,6 +60,7 @@ const GameBox = ({ changeTurn, turn, declareWinner, winner, setPlayers }) => {
           value={value?.value}
           onClick={() => handleClick(key)}
           win={winner?.row?.includes(Number(key))}
+          winner={winner}
         />
       ))}
 

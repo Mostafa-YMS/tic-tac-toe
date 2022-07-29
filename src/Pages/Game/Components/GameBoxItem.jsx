@@ -1,11 +1,11 @@
 import { boxItemStyle, valueStyle } from "../gameStyles";
 
-const GameBoxItem = ({ value, onClick, win }) => {
+const GameBoxItem = ({ value, onClick, win, winner }) => {
   return (
     <div
       style={{
         ...boxItemStyle,
-        cursor: !value && "pointer",
+        cursor: !value && !winner && "pointer",
         backgroundColor: win && "#C0FFD6",
       }}
       onClick={!value ? onClick : () => {}}
