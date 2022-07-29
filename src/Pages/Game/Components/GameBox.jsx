@@ -1,23 +1,8 @@
 import { useCallback, useState } from "react";
-import { winnerChecker } from "../shared/checkWinner";
+import { winnerChecker } from "../../../shared/checkWinner";
 import GameBoxItem from "./GameBoxItem";
-import { buttonStyle } from "../Pages/AddPlayers/AddPlayersStyles";
-
-const boxContainer = {
-  maxWidth: "500px",
-  display: "flex",
-  flexWrap: "wrap",
-  width: "100%",
-  alignItems: "center",
-  justifyContent: "center",
-};
-const btnDivStyle = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-around",
-  width: "100%",
-  marginTop: "10px",
-};
+import { buttonStyle } from "../../AddPlayers/AddPlayersStyles";
+import { boxContainer, btnDivStyle } from "../gameStyles";
 
 const initialValues = {
   1: {},

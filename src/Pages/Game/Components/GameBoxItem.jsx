@@ -1,13 +1,4 @@
-const boxItemStyle = {
-  width: "31%",
-  maxWidth: "150px",
-  height: "150px",
-  border: "3px solid #000000",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-};
-const valueStyle = { fontSize: "65px" };
+import { boxItemStyle, valueStyle } from "../gameStyles";
 
 const GameBoxItem = ({ value, onClick, win }) => {
   return (

@@ -1,12 +1,7 @@
 import { useState, useCallback } from "react";
-import GameBox from "../../Components/GameBox";
-import Players from "../../Components/Players";
-
-const gameBoxDivStyle = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-};
+import GameBox from "./Components/GameBox";
+import Players from "./Components/Players";
+import { gameBoxDivStyle } from "./gameStyles";
 
 const Game = ({ players, setPlayers }) => {
   const [turn, setTurn] = useState("X");

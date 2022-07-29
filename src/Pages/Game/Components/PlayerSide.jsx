@@ -1,21 +1,9 @@
-const mainDivStyle = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  flexDirection: "column",
-};
-const sideBoxStyle = {
-  width: "75px",
-  height: "75px",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  borderRadius: "6px",
-};
-
-const winningsStyle = { color: "#000" };
-
-const sideStyle = { fontSize: "48px", fontWeight: "500" };
+import {
+  mainDivStyle,
+  sideBoxStyle,
+  sideStyle,
+  winningsStyle,
+} from "../gameStyles";
 
 const PlayerSide = ({ player, turn, side, winner }) => {
   return (

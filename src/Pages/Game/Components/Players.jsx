@@ -1,10 +1,5 @@
+import { playersDivStyle } from "../gameStyles";
 import PlayerSide from "./PlayerSide";
-
-const playersDivStyle = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-around",
-};
 
 const Players = ({ players, turn, winner }) => {
   return (
@@ -27,7 +22,9 @@ const Players = ({ players, turn, winner }) => {
         />
       )}
       {winner === "draw" && (
-        <p style={{ fontSize: "38px", fontWeight: "500" }}>Draw</p>
+        <p style={{ fontSize: "38px", fontWeight: "500", color: "#661166" }}>
+          Draw
+        </p>
       )}
     </div>
   );
