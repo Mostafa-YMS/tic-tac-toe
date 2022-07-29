@@ -34,7 +34,7 @@ const Game = ({ players, setPlayers }) => {
         />
       </div>
       <div style={gameBoxDivStyle}>
-        <GameBox changeTurn={changeTurn} />
+        <GameBox changeTurn={changeTurn} turn={turn} />
       </div>
     </div>
   );

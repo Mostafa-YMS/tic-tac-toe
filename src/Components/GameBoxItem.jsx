@@ -13,7 +13,7 @@ const GameBoxItem = ({ value, onClick }) => {
   return (
     <div
       style={{ ...boxItemStyle, cursor: !value && "pointer" }}
-      onClick={onClick}
+      onClick={!value ? onClick : () => {}}
     >
       <p style={valueStyle}>{value}</p>
     </div>

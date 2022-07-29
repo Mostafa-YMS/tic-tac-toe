@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import GameBoxItem from "./GameBoxItem";
 
 const boxContainer = {
@@ -8,23 +8,39 @@ const boxContainer = {
   width: "100%",
 };
 
-const GameBox = ({ changeTurn }) => {
-  const [values, setValues] = useState({
-    1: {},
-    2: {},
-    3: {},
-    4: {},
-    5: {},
-    6: {},
-    7: {},
-    8: {},
-    9: {},
-  });
+const initialValues = {
+  1: {},
+  2: {},
+  3: {},
+  4: {},
+  5: {},
+  6: {},
+  7: {},
+  8: {},
+  9: {},
+};
+
+const GameBox = ({ changeTurn, turn }) => {
+  const [values, setValues] = useState(initialValues);
+
+  const handleClick = useCallback(
+    (key) => {
+      if (turn && changeTurn) {
+        setValues((prev) => ({ ...prev, [key]: { value: turn } }));
+        changeTurn();
+      }
+    },
+    [changeTurn, turn]
+  );
 
   return (
     <div style={boxContainer}>
       {Object.entries(values).map(([key, value]) => (
-        <GameBoxItem value={value?.value} onClick={() => console.log(key)} />
+        <GameBoxItem
+          key={key}
+          value={value?.value}
+          onClick={() => handleClick(key)}
+        />
       ))}
     </div>
   );
