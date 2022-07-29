@@ -85,3 +85,7 @@ export const errorStyle = {
   color: "red",
   fontSize: "14px",
 };
+
+export const titleStyle = { fontWeight: "700", fontSize: "48px" };
+
+export const firstPlayerStyle = { marginBottom: "70px" };

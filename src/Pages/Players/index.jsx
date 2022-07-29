@@ -2,6 +2,7 @@ import { useState } from "react";
 import {
   buttonStyle,
   errorStyle,
+  firstPlayerStyle,
   formStyle,
   headerStyle,
   inputContainerStyle,
@@ -10,16 +11,19 @@ import {
   labelStyle,
   mainBoxStyle,
   mainTitleStyle,
+  titleStyle,
 } from "./PlayersStyles";
 
-const Players = () => {
+const Players = ({ players, setPlayers }) => {
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
   const [error, setError] = useState(false);
+
   const handleFirstNameChange = (e) => {
     error && setError(false);
     setFirstName(e.target.value);
   };
+
   const handleLastNameChange = (e) => {
     error && setError(false);
     setLastName(e.target.value);
@@ -27,7 +31,37 @@ const Players = () => {
 
   const handleContinue = (e) => {
     e.preventDefault();
+
     if (firstName?.trim() && lastName?.trim()) {
+      if (!players?.firstPlayer) {
+        localStorage.setItem(
+          "players",
+          JSON.stringify({
+            firstPlayer: { firstName, lastName },
+          })
+        );
+        setPlayers &&
+          setPlayers({
+            firstPlayer: { firstName, lastName },
+          });
+
+        setFirstName();
+        setLastName();
+      } else {
+        localStorage.setItem(
+          "players",
+          JSON.stringify({
+            ...players,
+            secondPlayer: { firstName, lastName },
+          })
+        );
+
+        setPlayers &&
+          setPlayers({
+            ...players,
+            secondPlayer: { firstName, lastName },
+          });
+      }
     } else {
       setError(true);
     }
@@ -35,13 +69,19 @@ const Players = () => {
 
   return (
     <form style={formStyle} onSubmit={handleContinue}>
-      <p style={{ fontWeight: "700", fontSize: "48px" }}>
-        Welcome to tic tac toe
-      </p>
+      <p style={titleStyle}>Welcome to tic tac toe</p>
+
+      {players?.firstPlayer && (
+        <p
+          style={firstPlayerStyle}
+        >{`Player 1 name: ${players?.firstPlayer?.firstName} ${players?.firstPlayer?.lastName}`}</p>
+      )}
 
       <div style={mainBoxStyle}>
         <div style={headerStyle}>
-          <p style={mainTitleStyle}>Add First player</p>
+          <p style={mainTitleStyle}>
+            {!players?.firstPlayer ? "Add First player" : "Add Second player"}
+          </p>
         </div>
 
         {error && (
