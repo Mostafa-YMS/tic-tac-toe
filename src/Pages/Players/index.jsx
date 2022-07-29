@@ -36,12 +36,12 @@ const Players = ({ players, setPlayers }) => {
         localStorage.setItem(
           "players",
           JSON.stringify({
-            firstPlayer: { firstName, lastName },
+            firstPlayer: { firstName, lastName, score: 0 },
           })
         );
         setPlayers &&
           setPlayers({
-            firstPlayer: { firstName, lastName },
+            firstPlayer: { firstName, lastName, score: 0 },
           });
 
         setFirstName();
@@ -51,14 +51,14 @@ const Players = ({ players, setPlayers }) => {
           "players",
           JSON.stringify({
             ...players,
-            secondPlayer: { firstName, lastName },
+            secondPlayer: { firstName, lastName, score: 0 },
           })
         );
 
         setPlayers &&
           setPlayers({
             ...players,
-            secondPlayer: { firstName, lastName },
+            secondPlayer: { firstName, lastName, score: 0 },
           });
       }
     } else {
