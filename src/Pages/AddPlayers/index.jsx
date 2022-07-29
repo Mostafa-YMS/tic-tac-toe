@@ -11,9 +11,9 @@ import {
   labelStyle,
   mainBoxStyle,
   mainTitleStyle,
-} from "./PlayersStyles";
+} from "./AddPlayersStyles";
 
-const Players = ({ players, setPlayers }) => {
+const AddPlayers = ({ players, setPlayers }) => {
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
   const [error, setError] = useState(false);
@@ -129,4 +129,4 @@ const Players = ({ players, setPlayers }) => {
   );
 };
 
-export default Players;
+export default AddPlayers;

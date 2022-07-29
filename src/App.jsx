@@ -1,4 +1,4 @@
-import Players from "./Pages/Players";
+import AddPlayers from "./Pages/AddPlayers";
 import { useState, useCallback, useEffect } from "react";
 import Game from "./Pages/Game";
 
@@ -32,7 +32,7 @@ function App() {
           {players?.firstPlayer && players?.secondPlayer ? (
             <Game players={players} setPlayers={changePlayers} />
           ) : (
-            <Players players={players} setPlayers={changePlayers} />
+            <AddPlayers players={players} setPlayers={changePlayers} />
           )}
         </div>
       )}
