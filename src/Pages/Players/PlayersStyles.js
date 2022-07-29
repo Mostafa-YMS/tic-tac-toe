@@ -11,7 +11,8 @@ export const mainBoxStyle = {
   background: "#FFFFFF",
   borderRadius: "8px",
   boxShadow: "0px 2px 6px rgba(220, 34, 101, 0.36)",
-  width: "516px",
+  maxWidth: "516px",
+  width: "100%",
   height: "239px",
   display: "flex",
   alignItems: "center",
@@ -80,12 +81,10 @@ export const buttonStyle = {
 };
 
 export const errorStyle = {
-  width: "100",
+  width: "100%",
   textAlign: "center",
   color: "red",
   fontSize: "14px",
 };
-
-export const titleStyle = { fontWeight: "700", fontSize: "48px" };
 
 export const firstPlayerStyle = { marginBottom: "70px" };
