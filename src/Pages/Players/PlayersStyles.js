@@ -76,4 +76,12 @@ export const buttonStyle = {
   padding: "11px 44px",
   border: 0,
   color: "#FFF",
+  cursor: "pointer",
+};
+
+export const errorStyle = {
+  width: "100",
+  textAlign: "center",
+  color: "red",
+  fontSize: "14px",
 };
