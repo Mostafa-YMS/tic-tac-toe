@@ -8,6 +8,14 @@ export const titleStyle = {
   textAlign: "center",
   marginBottom: "60px",
 };
+const loadingDivStyle = {
+  width: "100%",
+  height: "100%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  fontSize: "62px",
+};
 
 function App() {
   const [players, setPlayers] = useState();
@@ -27,13 +35,17 @@ function App() {
   return (
     <>
       <p style={titleStyle}>Welcome to tic tac toe</p>
-      {!loading && (
+      {!loading ? (
         <div>
           {players?.firstPlayer && players?.secondPlayer ? (
             <Game players={players} setPlayers={changePlayers} />
           ) : (
             <AddPlayers players={players} setPlayers={changePlayers} />
           )}
+        </div>
+      ) : (
+        <div style={loadingDivStyle}>
+          <p>Loading...</p>
         </div>
       )}
     </>
