@@ -28,13 +28,15 @@ const GameBox = ({ changeTurn, turn, declareWinner, winner, setPlayers }) => {
 
         changeTurn();
 
-        const newWinner = winnerChecker(
-          { ...values, [key]: { value: turn } },
-          key
-        );
-        newWinner && declareWinner({ row: newWinner, player: turn });
-        if (plays === 9 && !newWinner) {
-          declareWinner("draw");
+        if (plays > 4) {
+          const newWinner = winnerChecker(
+            { ...values, [key]: { value: turn } },
+            key
+          );
+          newWinner && declareWinner({ row: newWinner, player: turn });
+          if (plays === 9 && !newWinner) {
+            declareWinner("draw");
+          }
         }
       }
     },
